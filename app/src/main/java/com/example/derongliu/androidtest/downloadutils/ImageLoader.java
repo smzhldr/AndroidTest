@@ -9,12 +9,10 @@ import android.os.Message;
 import android.util.LruCache;
 import android.widget.ImageView;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class ImageLoader {
@@ -85,24 +83,15 @@ public class ImageLoader {
 
     public void loadImage(final String url, final DisplayImgaeOptions options, final ImageLoadingListener listener) {
 
-       /* loadImageHandler.post(new Runnable() {
+        loadImageHandler.post(new Runnable() {
             @Override
             public void run() {
                 Bitmap bitmap = downLoadImgae(url, listener);
-                if (options.isNeedCahce() && url != null && bitmap != null) {
+                if (options.isNeedCahce() && url != null && bitmap != null && lruCache.get(url) == null) {
                     lruCache.put(url, bitmap);
                 }
             }
-        });*/
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Bitmap bitmap = downLoadImgae(url, listener);
-                if (options.isNeedCahce() && url != null && bitmap != null) {
-                    lruCache.put(url, bitmap);
-                }
-            }
-        }).start();
+        });
     }
 
 
@@ -122,32 +111,50 @@ public class ImageLoader {
     }
 
 
-    private Bitmap downLoadImgae(String urlStr, final ImageLoadingListener listener) {
-        URL url = null;
-        try {
-            url = new URL(urlStr);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
+    private Bitmap downLoadImgae(final String urlStr, final ImageLoadingListener listener) {
         if (lruCache.get(urlStr) != null) {
+            for (int i = 0; i <= 100; i++) {
+                Message msg = Message.obtain(handler);
+                msg.what = 0x200;
+                msg.arg1 = i;
+                msg.obj = listener;
+                handler.sendMessage(msg);
+            }
+            if (listener != null) {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        listener.onImgaeLoadComplete((Bitmap) lruCache.get(urlStr));
+                    }
+                });
+            }
             return (Bitmap) lruCache.get(urlStr);
         }
+
+
+        HttpURLConnection connection = null;
         try {
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            URL url = new URL(urlStr);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setReadTimeout(5000);
             connection.setConnectTimeout(5000);
-            connection.setDoInput(true);
-            connection.setRequestMethod("GET");
-            // connection.setRequestProperty("Content-type", "imgae/jpg");
-            connection.connect();
+
+//            httpConnection 具有默认参数
+//            connection.setDoInput(true);
+//            connection.setRequestMethod("GET");
+//            connection.setRequestProperty("Content-type", "imgae/jpg");
+
+//            connection.connect()在getInputStream中隐式调用
+//            connection.connect();
+
             if (connection.getResponseCode() == 200) {
                 InputStream inputStream = connection.getInputStream();
-               // File myFile = new File("saveFileAllName");
                 if (listener != null) {
                     int contentLength = connection.getContentLength();
                     byte[] bytes = new byte[1024];
                     int totalReaded = 0;
                     int temp_Len;
+                    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                     while ((temp_Len = inputStream.read(bytes)) != -1) {
                         totalReaded += temp_Len;
                         final int progress = totalReaded * 100 / contentLength;
@@ -156,31 +163,28 @@ public class ImageLoader {
                         msg.arg1 = progress;
                         msg.obj = listener;
                         handler.sendMessage(msg);
-
-                        /*FileOutputStream fileOutputStream = new FileOutputStream(myFile);
-                        fileOutputStream.write(bytes, 0, temp_Len);*/
+                        outputStream.write(bytes, 0, temp_Len);
+                    }
+                    final Bitmap bitmap = BitmapFactory.decodeByteArray(outputStream.toByteArray(), 0, outputStream.toByteArray().length);
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            listener.onImgaeLoadComplete(bitmap);
                         }
-                    }
-
-                    final Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                    if (listener != null) {
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                listener.onImgaeLoadComplete(bitmap);
-                            }
-                        });
-                    }
-
-                    connection.disconnect();
+                    });
                     return bitmap;
                 } else {
-                    return null;
+                    return BitmapFactory.decodeStream(inputStream);
                 }
-
-            } catch(IOException e){
-                e.printStackTrace();
+            } else {
+                return null;
             }
-            return null;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            connection.disconnect();
         }
+        return null;
     }
+}

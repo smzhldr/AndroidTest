@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
@@ -31,7 +32,7 @@ public class PictureActivity extends Activity {
         DisplayImgaeOptions options = new DisplayImgaeOptions();
         options.cache(true);
 
-        ImageLoader.getInstance().loadImage("http://i2.shenchuang.com/weixininfo/2015/10/16024137312.jpg", options, new ImageLoader.ImageLoadingListener() {
+        ImageLoader.getInstance().loadImage("http://d.5857.com/fengg_141011/001.jpg", options, new ImageLoader.ImageLoadingListener() {
             @Override
             public void onImgaeLoading(int progress) {
                 progressBar.setProgress(progress);
