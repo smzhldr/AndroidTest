@@ -41,11 +41,13 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private void initData() {
         itemNameList = new ArrayList<>();
         itemNameList.add("下载图片");
+        itemNameList.add("OpenGl若干");
     }
 
     private void initClass() {
         classList = new ArrayList<>();
         classList.add(PictureActivity.class);
+        classList.add(com.example.derongliu.opengltest.MainActivity.class);
     }
 
 

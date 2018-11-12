@@ -29,6 +29,7 @@ android {
 }
 
 dependencies {
+    implementation project(":opengltest")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
