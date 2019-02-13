@@ -1,2 +1,1 @@
-include ':app',':opengltest'
-project(':opengltest').projectDir = new File('opengltest/app')
+include ':app'

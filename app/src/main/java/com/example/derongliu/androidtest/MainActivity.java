@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.derongliu.androidtest.listener.OnItemClickListener;
 import com.example.derongliu.androidtest.picture.PictureActivity;
+import com.example.derongliu.ndk.NDKTestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,13 +42,13 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private void initData() {
         itemNameList = new ArrayList<>();
         itemNameList.add("下载图片");
-        itemNameList.add("OpenGl若干");
+        itemNameList.add("NDKTest");
     }
 
     private void initClass() {
         classList = new ArrayList<>();
         classList.add(PictureActivity.class);
-        classList.add(com.example.derongliu.opengltest.MainActivity.class);
+        classList.add(NDKTestActivity.class);
     }
 
 
