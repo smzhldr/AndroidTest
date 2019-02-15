@@ -7,4 +7,8 @@ public class NDKTest {
     }
 
     public native String sayHello();
+
+    public native String sayHelloObject(Person person);
+
+    public native Person getPerson();
 }

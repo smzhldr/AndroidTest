@@ -15,6 +15,22 @@ extern "C" {
 JNIEXPORT jstring JNICALL Java_com_example_derongliu_ndk_NDKTest_sayHello
   (JNIEnv *, jobject);
 
+/*
+ * Class:     com_example_derongliu_ndk_NDKTest
+ * Method:    sayHelloObject
+ * Signature: (Lcom/example/derongliu/ndk/Person;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_example_derongliu_ndk_NDKTest_sayHelloObject
+  (JNIEnv *, jobject, jobject);
+
+/*
+ * Class:     com_example_derongliu_ndk_NDKTest
+ * Method:    getPerson
+ * Signature: ()Lcom/example/derongliu/ndk/Person;
+ */
+JNIEXPORT jobject JNICALL Java_com_example_derongliu_ndk_NDKTest_getPerson
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif
