@@ -43,12 +43,14 @@ public class MainActivity extends Activity implements OnItemClickListener {
         itemNameList = new ArrayList<>();
         itemNameList.add("下载图片");
         itemNameList.add("NDKTest");
+        itemNameList.add("Camera_lib");
     }
 
     private void initClass() {
         classList = new ArrayList<>();
         classList.add(PictureActivity.class);
         classList.add(NDKTestActivity.class);
+        classList.add(CameraActivity.class);
     }
 
 
