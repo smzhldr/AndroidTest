@@ -24,9 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.derongliu.ndk.NDKTestActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".CameraActivity"></activity>
         <activity android:name=".dowloadpicture.PictureActivity" />
         <activity
