@@ -1,22 +1,16 @@
-package com.example.derongliu.androidtest.picture;
+package com.example.derongliu.androidtest.dowloadpicture;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.derongliu.androidtest.R;
-import com.example.derongliu.androidtest.downloadutils.DisplayImgaeOptions;
-import com.example.derongliu.androidtest.downloadutils.ImageLoader;
-
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.example.derongliu.androidtest.dowloadpicture.downloadutils.DisplayImgaeOptions;
+import com.example.derongliu.androidtest.dowloadpicture.downloadutils.ImageLoader;
 
 public class PictureActivity extends Activity {
     @Override
