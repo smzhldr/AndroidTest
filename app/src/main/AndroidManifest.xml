@@ -20,16 +20,19 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
+                <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".picture.PictureActivity" />
         <activity
             android:name="com.example.derongliu.ndk.NDKTestActivity"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".dowloadpicture.PictureActivity" />
+        <activity
+            android:name="com.example.derongliu.ndk.NDKTestActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".scrollmenu.ScrollMenuActivity"/>
     </application>
 
 </manifest>

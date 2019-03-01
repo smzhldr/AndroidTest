@@ -12,8 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.derongliu.androidtest.listener.OnItemClickListener;
-import com.example.derongliu.androidtest.picture.PictureActivity;
+import com.example.derongliu.androidtest.dowloadpicture.listener.OnItemClickListener;
+import com.example.derongliu.androidtest.dowloadpicture.PictureActivity;
+import com.example.derongliu.androidtest.scrollmenu.ScrollMenuActivity;
 import com.example.derongliu.ndk.NDKTestActivity;
 
 import java.util.ArrayList;
@@ -44,6 +45,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
         itemNameList.add("下载图片");
         itemNameList.add("NDKTest");
         itemNameList.add("Camera_lib");
+        itemNameList.add("ScrollMenu");
     }
 
     private void initClass() {
@@ -51,6 +53,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
         classList.add(PictureActivity.class);
         classList.add(NDKTestActivity.class);
         classList.add(CameraActivity.class);
+        classList.add(ScrollMenuActivity.class);
     }
 
 
