@@ -1,4 +1,4 @@
-package com.example.derongliu.androidtest;
+package com.example.derongliu.androidtest.camera;
 
 import android.Manifest;
 import android.app.Activity;
@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 import com.aglframework.smzh.AGLView;
 import com.aglframework.smzh.camera.AGLCamera1;
+import com.example.derongliu.androidtest.R;
 
 import java.util.List;
 
