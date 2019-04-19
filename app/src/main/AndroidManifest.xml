@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".share.ShareActivity"></activity>
+        <activity android:name=".internet.RetrofitActivity"></activity>
+        <activity android:name=".share.ShareActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +33,7 @@
             android:name="com.example.derongliu.ndk.NDKTestActivity"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".scrollmenu.ScrollMenuActivity" />
+        <activity android:name=".internet.OKHttpActivity" />
     </application>
 
 </manifest>

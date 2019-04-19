@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.example.derongliu.androidtest.camera.CameraActivity;
 import com.example.derongliu.androidtest.dowloadpicture.listener.OnItemClickListener;
 import com.example.derongliu.androidtest.dowloadpicture.PictureActivity;
+import com.example.derongliu.androidtest.internet.OKHttpActivity;
+import com.example.derongliu.androidtest.internet.RetrofitActivity;
 import com.example.derongliu.androidtest.scrollmenu.ScrollMenuActivity;
 import com.example.derongliu.androidtest.share.ShareActivity;
 import com.example.derongliu.ndk.NDKTestActivity;
@@ -44,20 +46,24 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
     private void initData() {
         itemNameList = new ArrayList<>();
-        //itemNameList.add("下载图片");
-        //itemNameList.add("NDKTest");
-        //itemNameList.add("Camera_lib");
-        //itemNameList.add("ScrollMenu");
+        itemNameList.add("下载图片");
+        itemNameList.add("NDKTest");
+        itemNameList.add("Camera_lib");
+        itemNameList.add("ScrollMenu");
         itemNameList.add("分享回调");
+        itemNameList.add("OKHttp");
+        itemNameList.add("Retrofit");
     }
 
     private void initClass() {
         classList = new ArrayList<>();
-        //classList.add(PictureActivity.class);
-        //classList.add(NDKTestActivity.class);
-       // classList.add(CameraActivity.class);
-        //classList.add(ScrollMenuActivity.class);
+        classList.add(PictureActivity.class);
+        classList.add(NDKTestActivity.class);
+        classList.add(CameraActivity.class);
+        classList.add(ScrollMenuActivity.class);
         classList.add(ShareActivity.class);
+        classList.add(OKHttpActivity.class);
+        classList.add(RetrofitActivity.class);
     }
 
 
