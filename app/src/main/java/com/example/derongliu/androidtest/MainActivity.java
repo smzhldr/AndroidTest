@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.derongliu.aidl.AidlActivity;
 import com.example.derongliu.androidtest.camera.CameraActivity;
 import com.example.derongliu.androidtest.dowloadpicture.listener.OnItemClickListener;
 import com.example.derongliu.androidtest.dowloadpicture.PictureActivity;
@@ -53,6 +54,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
         itemNameList.add("分享回调");
         itemNameList.add("OKHttp");
         itemNameList.add("Retrofit");
+        itemNameList.add("AIDL");
     }
 
     private void initClass() {
@@ -64,6 +66,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
         classList.add(ShareActivity.class);
         classList.add(OKHttpActivity.class);
         classList.add(RetrofitActivity.class);
+        classList.add(AidlActivity.class);
     }
 
 
