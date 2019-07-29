@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScrollMenuBar">
+        <attr name="bar_width" format="dimension|reference" /> <!--min < max, default: 0.0f-->
+        <attr name="bar_item_decoration" format="dimension|reference" /> <!--min < max, default: 0.0f-->
+    </declare-styleable>
+
+    <declare-styleable name="RecyclerViewPager">
+        <attr name="rvp_triggerOffset" format="float" />
+        <attr name="rvp_flingFactor" format="float" />
+        <attr name="rvp_singlePageFling" format="boolean" />
+        <attr name="rvp_inertia" format="boolean"/>
+        <attr name="rvp_millisecondsPerInch" format="float" />
+    </declare-styleable>
+</resources>
