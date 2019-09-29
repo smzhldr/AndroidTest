@@ -1,4 +1,4 @@
-package com.example.derongliu.androidtest.scrollmenu;
+package com.example.derongliu.widget.scrollmenu;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
@@ -13,7 +13,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;

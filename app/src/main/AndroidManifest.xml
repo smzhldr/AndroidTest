@@ -2,6 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.derongliu.androidtest">
 
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".rxjava.RxActivity"></activity>
+        <activity
+            android:name=".rxjava.RxActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name="com.example.derongliu.kt.KtActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
@@ -25,7 +38,9 @@
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".main.mvvm.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -38,16 +53,8 @@
         <activity
             android:name="com.example.derongliu.ndk.NDKTestActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".scrollmenu.ScrollMenuActivity" />
+        <activity android:name="com.example.derongliu.widget.scrollmenu.ScrollMenuActivity" />
         <activity android:name=".internet.OKHttpActivity" />
     </application>
-    <uses-feature android:name="android.hardware.camera" />
-
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

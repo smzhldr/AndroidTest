@@ -1,9 +1,8 @@
-package com.example.derongliu.androidtest.scrollmenu;
+package com.example.derongliu.widget.scrollmenu;
 
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.derongliu.androidtest.R;
 

@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.derongliu.androidtest.MainActivity;
 import com.example.derongliu.androidtest.R;
 
 import java.util.List;

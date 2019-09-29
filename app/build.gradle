@@ -28,6 +28,10 @@ android {
             path "CMakeLists.txt"
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".scrollmenu.ScrollMenuActivity"
+    tools:context="com.example.derongliu.widget.scrollmenu.ScrollMenuActivity"
     android:gravity="center">
 
-    <com.example.derongliu.androidtest.scrollmenu.ScrollMenuBar
+    <com.example.derongliu.widget.scrollmenu.ScrollMenuBar
         android:id="@+id/scroll_menu_bar"
         android:layout_width="wrap_content"
         android:layout_height="400dp"

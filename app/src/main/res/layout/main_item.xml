@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="itemString"
+            type="String" />
+        <variable
+            name="dataBindingViewHolder"
+            type="com.example.derongliu.androidtest.main.mvvm.MainAdapter.DataBindingViewHolder" />
+    </data>
+    <TextView
         android:id="@+id/item_textView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center"
-        android:text="TextView" />
+        android:text="@{itemString}"
+        android:onClick="@{()->dataBindingViewHolder.onItemClick()}"
+        android:gravity="center" />
+
+
+</layout>
 

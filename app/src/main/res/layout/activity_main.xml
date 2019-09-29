@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_recyclerview"
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.derongliu.androidtest.main.mvvm.MainViewModel" />
+
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        tools:context=".main.mvvm.MainActivity">
 
-</FrameLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/main_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:itemListener="@{viewModel.listener}"
+            app:items="@{viewModel.titleItems}"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/showText"
+            android:layout_width="wrap_content"
+            tools:text="13123"
+            android:text="@={viewModel.clickPos}"
+            android:background="@color/colorAccent"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+</layout>
