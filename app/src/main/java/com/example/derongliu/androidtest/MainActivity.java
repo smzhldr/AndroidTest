@@ -14,12 +14,14 @@ import android.widget.TextView;
 
 import com.example.derongliu.aidl.AidlActivity;
 import com.example.derongliu.androidtest.camera.CameraActivity;
-import com.example.derongliu.androidtest.dowloadpicture.listener.OnItemClickListener;
-import com.example.derongliu.androidtest.dowloadpicture.PictureActivity;
+import com.example.derongliu.androidtest.downloadpicture.listener.OnItemClickListener;
+import com.example.derongliu.androidtest.downloadpicture.PictureActivity;
 import com.example.derongliu.androidtest.internet.OKHttpActivity;
 import com.example.derongliu.androidtest.internet.RetrofitActivity;
+import com.example.derongliu.androidtest.rxjava.RxActivity;
 import com.example.derongliu.androidtest.scrollmenu.ScrollMenuActivity;
 import com.example.derongliu.androidtest.share.ShareActivity;
+import com.example.derongliu.kt.KtActivity;
 import com.example.derongliu.ndk.NDKTestActivity;
 
 import java.util.ArrayList;
@@ -55,6 +57,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
         itemNameList.add("OKHttp");
         itemNameList.add("Retrofit");
         itemNameList.add("AIDL");
+        itemNameList.add("Kt");
+        itemNameList.add("RxJava");
     }
 
     private void initClass() {
@@ -67,6 +71,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
         classList.add(OKHttpActivity.class);
         classList.add(RetrofitActivity.class);
         classList.add(AidlActivity.class);
+        classList.add(KtActivity.class);
+        classList.add(RxActivity.class);
     }
 
 

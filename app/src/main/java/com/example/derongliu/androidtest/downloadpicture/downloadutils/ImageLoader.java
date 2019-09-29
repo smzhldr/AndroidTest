@@ -1,4 +1,4 @@
-package com.example.derongliu.androidtest.dowloadpicture.downloadutils;
+package com.example.derongliu.androidtest.downloadpicture.downloadutils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

@@ -2,14 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.derongliu.androidtest">
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.derongliu.aidl.AidlActivity"></activity>
+        <activity android:name=".rxjava.RxActivity"></activity>
+        <activity
+            android:name="com.example.derongliu.kt.KtActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity android:name="com.example.derongliu.aidl.AidlActivity" />
         <activity android:name=".internet.RetrofitActivity" />
         <activity android:name=".share.ShareActivity">
             <intent-filter>
@@ -38,12 +34,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".camera.CameraActivity" />
-        <activity android:name=".dowloadpicture.PictureActivity" />
+        <activity android:name=".downloadpicture.PictureActivity" />
         <activity
             android:name="com.example.derongliu.ndk.NDKTestActivity"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".scrollmenu.ScrollMenuActivity" />
         <activity android:name=".internet.OKHttpActivity" />
     </application>
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.derongliu.androidtest.dowloadpicture;
+package com.example.derongliu.androidtest.downloadpicture;
 
 import android.Manifest;
 import android.app.Activity;
@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.derongliu.androidtest.R;
-import com.example.derongliu.androidtest.dowloadpicture.downloadutils.DisplayImgaeOptions;
-import com.example.derongliu.androidtest.dowloadpicture.downloadutils.ImageLoader;
+import com.example.derongliu.androidtest.downloadpicture.downloadutils.DisplayImgaeOptions;
+import com.example.derongliu.androidtest.downloadpicture.downloadutils.ImageLoader;
 
 public class PictureActivity extends Activity {
     @Override

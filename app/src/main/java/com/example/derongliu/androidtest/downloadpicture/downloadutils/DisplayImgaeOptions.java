@@ -1,4 +1,4 @@
-package com.example.derongliu.androidtest.dowloadpicture.downloadutils;
+package com.example.derongliu.androidtest.downloadpicture.downloadutils;
 
 public class DisplayImgaeOptions {
 
