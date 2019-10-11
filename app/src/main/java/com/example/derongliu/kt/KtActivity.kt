@@ -1,5 +1,6 @@
 package com.example.derongliu.kt
 
+import android.app.Application
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.example.derongliu.androidtest.R
 import kotlinx.android.synthetic.main.kt_item.view.*
 
@@ -20,7 +22,7 @@ class KtActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.rv_kt)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = MyAdapter(initData())
-
+        //Toast.makeText(applicationContext, "hehe", Toast.LENGTH_LONG).show()
     }
 
     fun initData(): ArrayList<String> {
@@ -34,7 +36,7 @@ class KtActivity : AppCompatActivity() {
     }
 
 
-    private class MyAdapter(val items : ArrayList<String>) : RecyclerView.Adapter<MyHolder>() {
+    private class MyAdapter(val items: ArrayList<String>) : RecyclerView.Adapter<MyHolder>() {
 
         override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyHolder {
             //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -49,6 +51,7 @@ class KtActivity : AppCompatActivity() {
         override fun onBindViewHolder(p0: MyHolder, p1: Int) {
             //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             p0.tv.text = items[p1]
+            p0.tv.setOnClickListener { Toast.makeText(p0.tv.context, "hehe", Toast.LENGTH_LONG).show() }
 
         }
     }

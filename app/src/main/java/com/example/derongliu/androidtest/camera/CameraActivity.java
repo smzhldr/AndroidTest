@@ -7,7 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.aglframework.smzh.AGLView;
-import com.aglframework.smzh.camera.AGLCamera1;
+import com.aglframework.smzh.camera.AGLCamera;
 import com.example.derongliu.androidtest.R;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class CameraActivity extends Activity implements EasyPermissions.PermissionCallbacks {
 
     private AGLView aglView;
-    private AGLCamera1 aglCamera1;
+    private AGLCamera aglCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +37,10 @@ public class CameraActivity extends Activity implements EasyPermissions.Permissi
     protected void onResume() {
         super.onResume();
         if(EasyPermissions.hasPermissions(this, Manifest.permission.CAMERA)) {
-            if (aglCamera1 == null) {
-                aglCamera1 = new AGLCamera1(aglView, 1080, 2160);
+            if (aglCamera == null) {
+                aglCamera = new AGLCamera(aglView, 1080, 2160);
             }
-            aglCamera1.open();
+            aglCamera.open();
         }
     }
 
@@ -48,8 +48,8 @@ public class CameraActivity extends Activity implements EasyPermissions.Permissi
     @Override
     protected void onPause() {
         super.onPause();
-        if (aglCamera1 != null) {
-            aglCamera1.close();
+        if (aglCamera != null) {
+            aglCamera.close();
         }
     }
 
