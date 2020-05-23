@@ -38,7 +38,7 @@ public class CameraActivity extends Activity implements EasyPermissions.Permissi
         super.onResume();
         if(EasyPermissions.hasPermissions(this, Manifest.permission.CAMERA)) {
             if (aglCamera == null) {
-                aglCamera = new AGLCamera(aglView, 1080, 2160);
+                aglCamera = new AGLCamera(aglView, 1080, 1920);
             }
             aglCamera.open();
         }
